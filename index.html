@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CanvasNest</title>
+	<link rel=stylesheet type="text/css" href="css/nest.css">
+    <style>
+      #area-render {
+		color: #EEE;
+        /* position: fixed; */
+        height: 98.5%;
+        width: 99dvw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+		<div id="area-render">
+		<h2>hello, world</h2>
+		</div>
+    <script src="js/nest.js"></script>
+    <script>
+      const config = {
+        color: "128,128,255",
+        pointColor: "255,215,0",
+        opacity: 1,
+        zIndex: 1, 
+        count: 200,
+      };
+      const area = document.getElementById("area-render");
+      const cn = new CanvasNest(area, config);
+    </script>
+  </body>
+</html>

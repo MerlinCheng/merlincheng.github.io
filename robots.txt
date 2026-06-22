@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.csv$
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /private/

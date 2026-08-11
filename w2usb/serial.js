@@ -68,12 +68,14 @@ var serial = {};
         // that specification. This request sets the DTR (data terminal
         // ready) signal high to indicate to the device that the host is
         // ready to send and receive data.
+      /*
         .then(() => this.device_.controlTransferOut({
             'requestType': 'class',
             'recipient': 'interface',
             'request': 0x22,
             'value': 0x01,
             'index': this.interfaceNumber_}))
+      */
         .then(() => {
           readLoop();
         });
@@ -82,13 +84,17 @@ var serial = {};
   serial.Port.prototype.disconnect = function() {
     // This request sets the DTR (data terminal ready) signal low to
     // indicate to the device that the host has disconnected.
+    return this.device_.close();
+    /*
     return this.device_.controlTransferOut({
             'requestType': 'class',
             'recipient': 'interface',
             'request': 0x22,
             'value': 0x00,
             'index': this.interfaceNumber_})
+      
         .then(() => this.device_.close());
+    */
   };
 
   serial.Port.prototype.send = function(data) {

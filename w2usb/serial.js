@@ -68,17 +68,18 @@ var serial = {};
         // that specification. This request sets the DTR (data terminal
         // ready) signal high to indicate to the device that the host is
         // ready to send and receive data.
-      /*
+        /*
         .then(() => this.device_.controlTransferOut({
             'requestType': 'class',
             'recipient': 'interface',
             'request': 0x22,
             'value': 0x01,
             'index': this.interfaceNumber_}))
-      */
+        */
         .then(() => {
           readLoop();
-        });
+        })
+        ;
   };
 
   serial.Port.prototype.disconnect = function() {

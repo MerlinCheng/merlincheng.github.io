@@ -15,7 +15,7 @@
     io.onVTKeystroke = str => {
       if (port !== undefined) {
         port.send(textEncoder.encode(str)).catch(error => {
-          t.io.println('Send error: ' + error);
+          t.io.println('Send error(A): ' + error);
         });
       }
     };
@@ -23,7 +23,7 @@
     io.sendString = str => {
       if (port !== undefined) {
         port.send(textEncoder.encode(str)).catch(error => {
-          t.io.println('Send error: ' + error);
+          t.io.println('Send error(B): ' + error);
         });
       }
     };
